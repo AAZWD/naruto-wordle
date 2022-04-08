@@ -80,7 +80,7 @@ svg.cursor-pointer:hover {
   height: 3rem;
   align-items: center;
   justify-content: center;
-  padding-top: 0.5rem;
+  padding-top: 10%;
 }
 /*added left padding*/
 .right-icons {
