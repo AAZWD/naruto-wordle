@@ -248,7 +248,7 @@ function App() {
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col ">
-        <div className="pb-8 md:pb-6 md:grow">
+        <div className="pb-8 ">
           <Grid
             guesses={guesses}
             currentGuess={currentGuess}
@@ -256,13 +256,16 @@ function App() {
             currentRowClassName={currentRowClass}
           />
         </div>
-        <Keyboard
-          onChar={onChar}
-          onDelete={onDelete}
-          onEnter={onEnter}
-          guesses={guesses}
-          isRevealing={isRevealing}
-        />
+        <div className="grow">
+          <Keyboard
+            onChar={onChar}
+            onDelete={onDelete}
+            onEnter={onEnter}
+            guesses={guesses}
+            isRevealing={isRevealing}
+          />
+        </div>
+
         <InfoModal
           isOpen={isInfoModalOpen}
           handleClose={() => setIsInfoModalOpen(false)}
