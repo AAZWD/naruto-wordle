@@ -71,8 +71,8 @@ svg.cursor-pointer:hover {
 
 /*added top margin*/
 .navbar {
-  margin-bottom: 2%;
-  margin-top: 1%;
+  margin-bottom: 5%;
+  margin-top: 10%;
 }
 
 .navbar-content {
@@ -80,7 +80,6 @@ svg.cursor-pointer:hover {
   height: 3rem;
   align-items: center;
   justify-content: center;
-  padding-top: 10%;
 }
 /*added left padding*/
 .right-icons {
