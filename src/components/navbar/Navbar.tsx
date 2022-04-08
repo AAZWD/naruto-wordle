@@ -17,7 +17,7 @@ export const Navbar = ({
   setIsSettingsModalOpen,
 }: Props) => {
   return (
-    <div className="navbar">
+    <div className="navbar mt-6">
       <div className="navbar-content px-5">
       
       {/*CHANGES TO FONT COLOURS*/}
