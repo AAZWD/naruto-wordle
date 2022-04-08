@@ -71,8 +71,9 @@ svg.cursor-pointer:hover {
 
 /*added top margin*/
 .navbar {
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding-bottom: 2%;
 }
 
 .navbar-content {
