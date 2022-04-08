@@ -20,27 +20,38 @@ export const Cell = ({
 }: Props) => {
   const isFilled = value && !isCompleted
   const shouldReveal = isRevealing && isCompleted
-  const animationDelay = `${position * REVEAL_TIME_MS}ms`
+  //added delay to letter reveal
+  const animationDelay = `${position * REVEAL_TIME_MS + 100}ms`
   const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(
-    'w-14 h-14 border-solid border-2 flex items-center justify-center mx-0.5 text-4xl font-bold rounded dark:text-white',
+    'w-14 h-14 border-solid border-2 flex items-center justify-center mx-0.5 text-lg font-bold rounded dark:text-white',
     {
-      'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-600':
+      'bg-white dark:bg-slate-900 border-zinc-400 dark:border-zinc-700':
         !status,
-      'border-black dark:border-slate-100': value && !status,
-      'absent shadowed bg-slate-400 dark:bg-slate-700 text-white border-slate-400 dark:border-slate-700':
+      'border-zinc-500 dark:border-zinc-600': value && !status,
+      'absent shadowed bg-zinc-400 dark:bg-zinc-700 text-white border-zinc-400 dark:border-zinc-700':
         status === 'absent',
-      'correct shadowed bg-orange-500 text-white border-orange-500':
-        status === 'correct' && isHighContrast,
-      'present shadowed bg-cyan-500 text-white border-cyan-500':
-        status === 'present' && isHighContrast,
-      'correct shadowed bg-green-500 text-white border-green-500':
-        status === 'correct' && !isHighContrast,
-      'present shadowed bg-yellow-500 text-white border-yellow-500':
-        status === 'present' && !isHighContrast,
+      'correct shadowed bg-blue-700 text-white border-blue-700':
+        status === 'correct',
+      'present shadowed bg-amber-500 text-white border-amber-500':
+        status === 'present',
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
+/*
+      'transition ease-in-out': isRevealing,
+      'bg-zinc-300 dark:bg-zinc-600 dark:hover:bg-zinc-700 hover:bg-zinc-400 active:bg-zinc-500':        
+      !status,
+      'bg-zinc-500 dark:bg-zinc-800 text-white': status === 'absent',
+      'bg-amber-400 hover:bg-amber-500 active:bg-amber-600 text-white':
+        status === 'correct' && isHighContrast,
+      'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white':
+        status === 'present' && isHighContrast,
+      'bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white':
+        status === 'correct' && !isHighContrast,
+      'bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white':
+        status === 'present' && !isHighContrast,
+*/
     }
   )
 

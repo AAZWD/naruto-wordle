@@ -3,6 +3,7 @@ import { Key } from './Key'
 import { useEffect } from 'react'
 import { ENTER_TEXT, DELETE_TEXT } from '../../constants/strings'
 import { localeAwareUpperCase } from '../../lib/words'
+import { BackspaceIcon } from '@heroicons/react/outline'
 
 type Props = {
   onChar: (value: string) => void
@@ -89,7 +90,7 @@ export const Keyboard = ({
           />
         ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
-          {DELETE_TEXT}
+          <BackspaceIcon className="h-7 w-7 "/>
         </Key>
       </div>
     </div>

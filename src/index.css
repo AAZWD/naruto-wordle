@@ -5,37 +5,38 @@
 :root {
   --animation-speed: 1000ms;
   --animation-speed-fast: 250ms;
-  --default-cell-bg-color: theme('colors.white');
+  --default-cell-bg-color: theme('colors.red.700');
   --default-cell-border-color: theme('colors.black');
   --default-cell-text-color: theme('colors.black');
-  --absent-cell-bg-color: theme('colors.slate.400');
-  --correct-cell-bg-color: theme('colors.green.400');
-  --present-cell-bg-color: theme('colors.yellow.400');
+  --absent-cell-bg-color: theme('colors.zinc.500');
+  --correct-cell-bg-color: theme('colors.blue.600');
+  --present-cell-bg-color: theme('colors.amber.500');
 }
+/*yellow.300*/
 
 .dark {
-  --default-cell-bg-color: theme('colors.slate.900');
+  --default-cell-bg-color: theme('colors.zinc.900');
   --default-cell-border-color: theme('colors.white');
   --default-cell-text-color: theme('colors.white');
-  --absent-cell-bg-color: theme('colors.slate.700');
+  --absent-cell-bg-color: theme('colors.zinc.700');
 }
 
 .high-contrast {
-  --correct-cell-bg-color: theme('colors.orange.400');
-  --present-cell-bg-color: theme('colors.cyan.400');
+  --correct-cell-bg-color: theme('colors.blue.500');
+  --present-cell-bg-color: theme('colors.orange.400');
 }
 
 .cell-fill-animation {
   animation: onTypeCell linear;
-  animation-duration: 0.35s;
+  animation-duration: 0.15s;
 }
 
 .cell-reveal {
-  animation-duration: 0.35s;
+  animation-duration: 0.15s;
   animation-timing-function: linear;
   animation-fill-mode: backwards;
 }
-
+/* no flip
 .cell-reveal.absent {
   animation-name: revealAbsentCharCell;
 }
@@ -52,6 +53,7 @@
   animation: offsetLetterFlip 0.35s linear;
   animation-fill-mode: backwards;
 }
+*/
 
 svg.cursor-pointer {
   transition: all var(--animation-speed-fast);
@@ -60,27 +62,32 @@ svg.cursor-pointer {
 svg.cursor-pointer:hover {
   transform: scale(1.2);
 }
-
+/*
 .jiggle {
   animation: jiggle linear;
   animation-duration: var(--animation-speed-fast);
 }
+*/
 
+/*added top margin*/
 .navbar {
   margin-bottom: 2%;
+  margin-top: 1%;
 }
 
 .navbar-content {
   display: flex;
   height: 3rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
-
+/*added left padding*/
 .right-icons {
   display: flex;
+  padding-left: 2rem;
 }
 
+/* no flip
 @keyframes revealAbsentCharCell {
   0% {
     transform: rotateX(0deg);
@@ -143,8 +150,10 @@ svg.cursor-pointer:hover {
     transform: rotateX(180deg);
   }
 }
+*/
 
-/* Additional animation on the child div to avoid letters turning upside down/snapping back to upright visual glitch */
+/* Additional animation on the child div to avoid letters turning upside down/snapping back to upright visual glitch
+removed
 @keyframes offsetLetterFlip {
   0% {
     transform: rotateX(0deg);
@@ -153,21 +162,27 @@ svg.cursor-pointer:hover {
     transform: rotateX(180deg);
   }
 }
+*/
 
+/*little zoom in and out when typing*/
 @keyframes onTypeCell {
   0% {
     transform: scale(1);
   }
-
-  50% {
-    transform: scale(1.1);
+  0% {
+    transform: scale(1.015);
   }
-
+  50% {
+    transform: scale(1.025);
+  }
+  0% {
+    transform: scale(1.015);
+  }
   100% {
     transform: scale(1);
   }
 }
-
+/*
 .shadowed {
   text-shadow: 1px 1px 1px #000000;
 }
@@ -189,3 +204,4 @@ svg.cursor-pointer:hover {
     transform: translate(0, 0);
   }
 }
+*/
